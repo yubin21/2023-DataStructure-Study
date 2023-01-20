@@ -38,13 +38,14 @@
 - 큐의 맨 앞에 있는 값 반환
 - 비어있을 경우 null 반환
 
-문제 상황 발생시 에러 발생인지, 혹은 Null이나 false 반환인지의 차이를 가진다. 
+문제 상황 발생시 에러 발생인지, 혹은 Null이나 false 반환인지의 차이를 가진다.   
 출처  
 [ArrayList vs LinkedList](https://github.com/wjdrbs96/Today-I-Learn/blob/master/Java/Collection/List/ArrayList%20vs%20LinkedList.md)  
 [[JAVA] Queue(큐) 사용법 (add vs offer / remove vs poll / element vs peek)](https://cocoon1787.tistory.com/774)
 ### 문제 풀이
-각 tc마다 스택을 만든다. tc의 길이만큼 for문을 돌리며, `(`가 나올때는 push를, `)`가 나오는 경우는 pop을 진행하여 하나의 ()을 만든다. 만약 `)`가 없는데 `)`가 입력된다면 에러로 인식하여 e라는 문자를 입력한다. (이때 문자는 스택이 비어있는지를 확인하기 위함이므로, 다른 문자여도 상관없다.) tc의 마지막에는 스택이 빈 상태인지를 확인하여 YES/NO를 출력한다.
+큐를 만든 뒤, 반복문을 통해 1부터 n까지의 값을 넣는다. 그 후 큐가 1보다 클때까지(=한 장 남을때까지) 카드 제거와 위 카드를 가장 아래로 옮기는 (`q.offer(q.poll());`)것을 반복한다.
 ### Trouble Shooting
 문제 풀이시 큐를 사용할지 스택을 사용할지에 대한 이해가 아직도 부족하여, 처음에 스택으로 시도하였다가 이후에 변경하였다.  
+
 **문제 출처**  
 [2164번: 카드2](https://www.acmicpc.net/problem/2164)
